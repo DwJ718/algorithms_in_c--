@@ -8,8 +8,8 @@ int main() {
 class Solution {
 public:
     int maximizeWin(vector<int>& prizePositions, int k) {
-        //枚举第二个线段右端点，看第一个线段最多能有多少
-        //礼物数量就是r-l+1,一个坐标就有一个礼物
+        //枚举第二个线段右端点，看第一个线段最多能有多少,线段长度是 k，但奖品位置是离散的。
+        //礼物数量就是r-l+1,一个坐标就有一个礼物。将重叠的线段问题转化为不重叠的分割点枚举问题
         int n = prizePositions.size();
         if(k * 2 >= prizePositions[n - 1] - prizePositions[0])
             return n;
